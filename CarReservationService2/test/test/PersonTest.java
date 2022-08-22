@@ -10,11 +10,12 @@ import person.structure.Person;
 
 class PersonTest {
 	
-	private Erzeuger personSystem;
+	private Erzeuger erzeuger;
+	private Person person;
 	
 	@BeforeEach
 	void setUp() throws Exception {
-		personSystem = new KonkreterErzeugerLegalPerson();
+		erzeuger = new KonkreterErzeugerLegalPerson();
 		
 	}
 
@@ -25,7 +26,10 @@ class PersonTest {
 	
 	@Test
 	void test() {
-		personSystem.create();
+		person = erzeuger.create();
+		System.out.println(person.getName());
+		System.out.println(person.getAddress());
+		
 	}
 
 }
