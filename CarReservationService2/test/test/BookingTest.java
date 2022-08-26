@@ -31,11 +31,11 @@ class BookingTest {
 	void test() {
 		director.constructEnglishBookingView(eBuilder);
 		EnglishBookingView englishBookingView = eBuilder.build();
-		englishBookingView.printView();
+		System.out.println(englishBookingView.printView());
 		
 		director.constructGermanBookingView(gBuilder);
 		GermanBookingView germanBookingView = gBuilder.build();
-		germanBookingView.printView();
+		System.out.println(germanBookingView.printView());
 	}
 
 }
