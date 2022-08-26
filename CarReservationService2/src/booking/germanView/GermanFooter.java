@@ -9,11 +9,11 @@ public class GermanFooter extends Footer {
 	private String telephoneNumber = "04131 6770";
 		
 	@Override
-	protected void printFooter() {
-		System.out.println("****************************************");
-		System.out.println(ceo + "\t" + address + "\t" + telephoneNumber);
-		System.out.println("****************************************");
-
+	public String printFooter() {
+		String footer = "****************************************\n";
+		footer += ceo + "\t" + address + "\t" + telephoneNumber + "\n";
+		footer += "****************************************\n";
+		return footer;
 	}
 
 }

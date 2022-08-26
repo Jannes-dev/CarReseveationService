@@ -8,11 +8,11 @@ public class EnglishHeader extends Head {
 	private String companyName = "FamilyAutoRental";
 	
 	@Override
-	protected void printHeader() {
-		System.out.println("****************************************");
-		System.out.println(companyName + "\t" + "\t" + slogan);
-		System.out.println("****************************************");
-
+	public String printHeader() {
+		String header = "****************************************\n";
+		header += companyName + "\t" + slogan + "\n";
+		header += "****************************************\n";
+		return header;
 	}
 
 }
