@@ -4,6 +4,7 @@ import booking.englishView.EnglishFooter;
 import booking.englishView.EnglishHeader;
 import booking.germanView.GermanFooter;
 import booking.germanView.GermanHeader;
+import payment.structure.AccountType;
 
 public class Director {
 	
@@ -12,6 +13,7 @@ public class Director {
 		//TODO Scanner an irgendeinerstelle einfügen
 		builder.setBookingId(0);
 		builder.setBookingamount(0);
+		builder.setAccountType(AccountType.GOOGLEWALLET);
 		builder.setBookingDate(null);
 		builder.setReturnDate(null);
 		//Scanner einfügen um leute aus einem Dictonary abzufragen und alle vorher erstellten personen in einem Dictonary sammeln gnauso wie Resoucres 
@@ -25,6 +27,7 @@ public class Director {
 		//TODO Scanner an irgendeinerstelle einfügen
 		builder.setBookingId(0);
 		builder.setBookingamount(0);
+		builder.setAccountType(AccountType.GOOGLEWALLET);
 		builder.setBookingDate(null);
 		builder.setReturnDate(null);
 		//Scanner einfügen um leute aus einem Dictonary abzufragen und alle vorher erstellten personen in einem Dictonary sammeln gnauso wie Resoucres 

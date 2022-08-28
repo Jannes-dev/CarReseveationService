@@ -2,6 +2,7 @@ package booking.structure;
 
 import java.util.Date;
 
+import payment.structure.AccountType;
 import person.structure.Person;
 import resource.structure.ICar;
 
@@ -11,6 +12,7 @@ public class EnglishProductBuilder implements IBuilder {
 	private Head header;
 	private int bookingId;
 	private int bookingAmount;
+	private AccountType accountType;
 	private Date bookingDate;
 	private Date returnDate;
 	private Person bookingPerson;
@@ -58,10 +60,16 @@ public class EnglishProductBuilder implements IBuilder {
 		this.footer = footer;
 	}
 	
-
-	public EnglishBookingView build() {
-		return new EnglishBookingView(header, bookingId, bookingAmount, bookingDate, returnDate, bookingPerson, footer);
+	@Override
+	public void setAccountType(AccountType accountType) {
+		this.accountType = accountType;
 	}
+	
+	public EnglishBookingView build() {
+		return new EnglishBookingView(header, bookingId, bookingAmount, accountType, bookingDate, returnDate, bookingPerson, footer);
+	}
+
+	
 
 
 }

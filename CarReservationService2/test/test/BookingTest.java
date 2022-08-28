@@ -10,9 +10,11 @@ import booking.structure.GermanBookingView;
 import booking.structure.GermanProductBuilder;
 
 class BookingTest {
+	
 	Director director;
 	EnglishProductBuilder eBuilder;
 	GermanProductBuilder gBuilder;
+	
 	@BeforeEach
 	void setUp() throws Exception {
 		director = new Director();
