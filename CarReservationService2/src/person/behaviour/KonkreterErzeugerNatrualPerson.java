@@ -11,8 +11,8 @@ public class KonkreterErzeugerNatrualPerson extends Erzeuger{
 	public Person create() {
 		Scanner scanner = new Scanner(System.in);
 		
-		System.out.println("Enter idNumber:");
-		int idNumber = scanner.nextInt();
+		System.out.println("Enter idNumber(int):");
+		int idNumber = Integer.parseInt(scanner.nextLine());
 		
 		System.out.println("Enter FirstName:");
 		String firstName = scanner.nextLine();
@@ -23,7 +23,7 @@ public class KonkreterErzeugerNatrualPerson extends Erzeuger{
 		System.out.println("Enter Gender:");
 		String gender = scanner.nextLine();
 		
-		System.out.println("Enter Age:");
+		System.out.println("Enter Age(int):");
 		int age = Integer.parseInt(scanner.nextLine());
 		
 		System.out.println("Enter DriverLicense:");
@@ -36,7 +36,7 @@ public class KonkreterErzeugerNatrualPerson extends Erzeuger{
 		String address = scanner.nextLine();
 		
 		
-		System.out.println("Enter zipCode:");
+		System.out.println("Enter zipCode(int):");
 		int zipCode = Integer.parseInt(scanner.nextLine());
 		
 		return new NaturalPerson(idNumber, firstName, lastName, gender, age, driverLicense, city, address, zipCode);

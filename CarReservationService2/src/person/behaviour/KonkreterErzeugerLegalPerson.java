@@ -11,8 +11,8 @@ public class KonkreterErzeugerLegalPerson extends Erzeuger {
 	public Person create() {
 		Scanner scanner = new Scanner(System.in);
 		
-		System.out.println("Enter idNumber:");
-		int idNumber = scanner.nextInt();
+		System.out.println("Enter idNumber(int):");
+		int idNumber = Integer.parseInt(scanner.nextLine());
 		
 		System.out.println("Enter CompanyName:");
 		String companyName = scanner.nextLine();
@@ -23,7 +23,7 @@ public class KonkreterErzeugerLegalPerson extends Erzeuger {
 		System.out.println("Enter Address:");
 		String address = scanner.nextLine();
 		
-		System.out.println("Enter zipCode:");
+		System.out.println("Enter zipCode(int):");
 		int zipCode = Integer.parseInt(scanner.nextLine());
 		
 		return new LegalPerson(idNumber, companyName, city, address, zipCode);
