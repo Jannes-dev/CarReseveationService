@@ -76,9 +76,9 @@ public class Personmenue {
 				if(printPerson.getUnterklasse().equals("l")) {
 					System.out.println("LegalPerson: " + key + "\n");
 					System.out.println("Name:\t" + ((LegalPerson) printPerson).getName());
-					System.out.println("City:\t" + ((NaturalPerson) printPerson).getCity());
-					System.out.println("Address:\t" + ((NaturalPerson) printPerson).getAddress());
-					System.out.println("zipCode:\t" + ((NaturalPerson) printPerson).getZipCode());
+					System.out.println("City:\t" + ((LegalPerson) printPerson).getCity());
+					System.out.println("Address:\t" + ((LegalPerson) printPerson).getAddress());
+					System.out.println("zipCode:\t" + ((LegalPerson) printPerson).getZipCode());
 				}
 			}
 		}
