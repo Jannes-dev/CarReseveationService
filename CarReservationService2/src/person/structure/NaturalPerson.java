@@ -2,6 +2,8 @@ package person.structure;
 
 public class NaturalPerson extends Person {
 	
+	private int idNumber;
+	private String n;
 	private String gender;
 	private String city;
 	private String address;
@@ -11,7 +13,9 @@ public class NaturalPerson extends Person {
 	private String firstName;
 	private String lastName;
 	
-	public NaturalPerson(String firstName, String lastName, String gender, int age, String driverLicense, String city, String address, int zipCode) {
+	public NaturalPerson(int idNumber, String firstName, String lastName, String gender, int age, String driverLicense, String city, String address, int zipCode) {
+		this.idNumber = idNumber;
+		this.n = "n";
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.gender = gender;
@@ -20,36 +24,60 @@ public class NaturalPerson extends Person {
 		this.city = city;
 		this.address = address;
 		this.zipCode = zipCode;
+		
 	}
 	
 	@Override
 	public int getBirthday() {
 		// TODO Auto-generated method stub
-		return 0;
+		return this.age;
 	}
 
-	@Override
-	public void setBirthday(int birthday) {
-		// TODO Auto-generated method stub
-		
-	}
 
 	@Override
 	public String getName() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.firstName + " " + this.lastName;
 	}
 
-	@Override
-	public void setName(String name) {
-		// TODO Auto-generated method stub
-		
-	}
 
 	@Override
 	public String getAddress() {
 		// TODO Auto-generated method stub
-		return address;
+		return this.address;
+	}
+
+	@Override
+	public Integer getIdNumber() {
+		// TODO Auto-generated method stub
+		return this.idNumber;
+	}
+
+	@Override
+	public String getUnterklasse() {
+		// TODO Auto-generated method stub
+		return this.n;
+	}
+
+	public String getGender() {
+		// TODO Auto-generated method stub
+		return this.gender;
+	}
+	
+	@Override
+	public String getCity() {
+		// TODO Auto-generated method stub
+		return this.city;
+	}
+
+	public int getZipCode() {
+		// TODO Auto-generated method stub
+		return this.zipCode;
+	}
+
+	public String getDriverLicense() {
+		// TODO Auto-generated method stub
+		return this.driverLicense;
 	}
 	
 }
