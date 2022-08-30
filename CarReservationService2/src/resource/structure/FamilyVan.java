@@ -8,8 +8,8 @@ public class FamilyVan implements ICar {
 	}
 
 	@Override
-	public void showDetails() {
-		System.out.println("FamilyVan");
+	public String showDetails() {
+		return "FamilyVan";
 	}
 
 }

@@ -20,13 +20,18 @@ class ResourceTest {
 
 	@Test
 	void test() {
-		car = new SetTopBox(new Limo());
-		car.showDetails();
+		car = new FamilyVan();
+		System.out.println(car.showDetails());
 		System.out.println(car.giveCosts());
-		car = new ChildSeat(new FamilyVan());
-		car.showDetails();
+		car = new SetTopBox(car);
+		System.out.println(car.showDetails());
 		System.out.println(car.giveCosts());
-		
+		car = new ChildSeat(car);
+		System.out.println(car.showDetails());
+		System.out.println(car.giveCosts());
+		car = new ChildSeat(car);
+		System.out.println(car.showDetails());
+		System.out.println(car.giveCosts());
 	}
 
 }

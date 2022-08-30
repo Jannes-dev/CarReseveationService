@@ -13,8 +13,9 @@ public class ChildSeat extends Equipment {
 	}
 
 	@Override
-	public void showDetails() {
-		System.out.println("ChildSeat");
+	public String showDetails() {
+		
+		return car.showDetails() + " + ChildSeat";
 	}
 
 }

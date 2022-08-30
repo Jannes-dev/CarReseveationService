@@ -12,9 +12,9 @@ public class SetTopBox extends Equipment{
 	}
 
 	@Override
-	public void showDetails() {
-		car.showDetails();
-		System.out.println(", SetTopBox");
+	public String showDetails() {
+		
+		return car.showDetails() + " + SetTopBox";
 	}
 
 }

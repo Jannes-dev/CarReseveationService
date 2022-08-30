@@ -9,8 +9,8 @@ public class Limo implements ICar {
 	}
 
 	@Override
-	public void showDetails() {
-		System.out.println("Limusine");
+	public String showDetails() {
+		return "Limusine";
 	}
 
 }
