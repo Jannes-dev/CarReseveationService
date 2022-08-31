@@ -19,7 +19,7 @@ public abstract class Payment {
 		//TODO Account mit person verknüpfen und clientAuthentification mit dem account der bei person liegt abgleichen
 		//TODO sender Account anschließend zurückgeben
 		
-		UserNamePasswordStrategy userNamePassword = new UserNamePasswordStrategy();
+		UserNamePasswordStrategy userNamePassword = new UserNamePasswordStrategy(null);
 		
 		if(userNamePassword.authetication()) {
 			//TODO statt "allemeinepferdchen@web.de" muss da userNamePassword.getUsername hin

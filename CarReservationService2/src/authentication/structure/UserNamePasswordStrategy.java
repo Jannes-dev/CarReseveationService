@@ -7,6 +7,13 @@ public class UserNamePasswordStrategy implements ICredential {
 	private String password ="admin";
 	private int failcount = 0;
 	
+	public UserNamePasswordStrategy(String username) {
+		Scanner scanner = new Scanner(System.in);
+		this.username = username;
+		System.out.println("Enter password:");
+		this.password = scanner.nextLine();
+	}
+	
 	@Override
 	public boolean authetication() {
 		Scanner scanner = new Scanner(System.in);
@@ -36,6 +43,10 @@ public class UserNamePasswordStrategy implements ICredential {
 				System.out.println("Login not successful. Reset password!");
 			}
 		}
+	}
+	
+	public String getPassword() {
+		return this.password;
 	}
 
 }
