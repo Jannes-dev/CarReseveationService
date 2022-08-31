@@ -15,6 +15,7 @@ public class MainMethod {
 		
 		AuthenticationMenue authenticationMenue = new AuthenticationMenue();
 		authenticationMenue.menu();
+		//TODO authetifizierung durchführen (wie auch immer :()
 	}
 
 }
