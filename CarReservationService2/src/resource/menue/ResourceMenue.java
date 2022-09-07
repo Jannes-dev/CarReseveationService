@@ -5,6 +5,7 @@ import java.util.Scanner;
 import java.util.Set;
 
 import person.behaviour.KonkreterErzeugerLegalPerson;
+import person.menue.Personmenue;
 import person.structure.LegalPerson;
 import person.structure.NaturalPerson;
 import person.structure.Person;
@@ -17,7 +18,13 @@ import resource.structure.SetTopBox;
 public class ResourceMenue {
 	private int choice;
 	private Scanner scanner = new Scanner(System.in);
+	private static final ResourceMenue resourceMenue = new ResourceMenue();
+	
 	public Hashtable<Integer, ICar> resourceDictonary = new Hashtable<Integer, ICar>();
+	
+	private ResourceMenue() {
+		
+	}
 	
 	public void menu() {
 		int weiter = 0;
@@ -65,7 +72,7 @@ public class ResourceMenue {
 				printPersonDictonary();
 				break;
 			}
-			System.out.println("Wenn sie eine weitere Aktion ausführen wollen geben sie 1 ein:");
+			System.out.println("Wenn sie eine weitere ResourcenAktion ausführen wollen geben sie 1 ein, sonst 0:");
 			weiter = scanner.nextInt();
 		}while(weiter == 1);
 	}
@@ -110,5 +117,9 @@ public class ResourceMenue {
 		}
 		else
 			System.out.println("Keine Resourcen Vorhanden!");
+	}
+	
+	public static ResourceMenue getInstance() {
+		return resourceMenue;
 	}
 }

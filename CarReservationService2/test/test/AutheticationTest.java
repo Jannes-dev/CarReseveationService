@@ -15,13 +15,13 @@ class AutheticationTest {
 	void test() {
 		subject = new Subject();
 		
-		subject.setStrategy(new EyeScanStrategy());
+		subject.setStrategy(new EyeScanStrategy(), "Admin");
 		subject.printConformatin();
 		
-		subject.setStrategy(new UserNamePasswordStrategy());
+		subject.setStrategy(new UserNamePasswordStrategy("Admin"), "Admin");
 		subject.printConformatin();
 		
-		subject.setStrategy(new FingerPrintStrategy());
+		subject.setStrategy(new FingerPrintStrategy(), "Admin");
 		subject.printConformatin();
 	}
 

@@ -13,10 +13,13 @@ import person.structure.NaturalPerson;
 
 public class Personmenue {
 	
-	
+	private static final Personmenue personmenue = new Personmenue();
 	
 	public Hashtable<Integer, Person> personDictonary = new Hashtable<Integer, Person>();
 	
+	private Personmenue() {
+		
+	}
 	public void menu() {
 		int weiter = 0;
 		Scanner scanner = new Scanner(System.in);
@@ -53,7 +56,7 @@ public class Personmenue {
 				printPersonDictonary();
 				break;
 			}
-			System.out.println("Wenn sie eine weitere Aktion ausführen wollen geben sie 1 ein:");
+			System.out.println("Wenn sie eine weitere PersonenAktion ausführen wollen geben sie 1 ein, sonst 0:");
 			weiter = scanner.nextInt();
 		}while(weiter == 1);
 	}
@@ -84,5 +87,10 @@ public class Personmenue {
 		}
 		else
 			System.out.println("Keine Personen Vorhanden!");
+	}
+
+	public static Personmenue getInstance() {
+		// TODO Auto-generated method stub
+		return personmenue;
 	}
 }

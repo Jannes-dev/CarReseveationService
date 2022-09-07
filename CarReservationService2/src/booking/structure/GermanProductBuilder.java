@@ -9,8 +9,6 @@ import resource.structure.ICar;
 public class GermanProductBuilder implements IBuilder {
 	
 	private Head header;
-	private int bookingId;
-	private int bookingAmount;
 	private Date bookingDate;
 	private Date returnDate;
 	private Person bookingPerson;
@@ -21,18 +19,6 @@ public class GermanProductBuilder implements IBuilder {
 	@Override
 	public void setHeader(Head head) {
 		this.header = head;
-	}
-
-	@Override
-	public void setBookingId(int bookingId) {
-		this.bookingId = bookingId;
-
-	}
-
-	@Override
-	public void setBookingamount(int bookingAmount) {
-		this.bookingAmount = bookingAmount;
-
 	}
 
 	@Override
@@ -71,7 +57,7 @@ public class GermanProductBuilder implements IBuilder {
 	}
 
 	public GermanBookingView build() {
-		return new GermanBookingView(header, bookingId, bookingAmount, accountType, bookingDate, returnDate, bookingPerson, footer);
+		return new GermanBookingView(header, accountType, bookingDate, returnDate, bookingPerson, footer, car);
 	}
 
 

@@ -10,8 +10,6 @@ public class EnglishProductBuilder implements IBuilder {
 	
 	//TODO variablen aus GermanBodyPruduct befüllen
 	private Head header;
-	private int bookingId;
-	private int bookingAmount;
 	private AccountType accountType;
 	private Date bookingDate;
 	private Date returnDate;
@@ -23,16 +21,6 @@ public class EnglishProductBuilder implements IBuilder {
 	@Override
 	public void setHeader(Head head) {
 		this.header = head;
-	}
-
-	@Override
-	public void setBookingId(int bookingId) {
-		this.bookingId = bookingId;
-	}
-
-	@Override
-	public void setBookingamount(int bookingAmount) {
-		this.bookingAmount = bookingAmount;
 	}
 
 	@Override
@@ -66,7 +54,7 @@ public class EnglishProductBuilder implements IBuilder {
 	}
 	
 	public EnglishBookingView build() {
-		return new EnglishBookingView(header, bookingId, bookingAmount, accountType, bookingDate, returnDate, bookingPerson, footer);
+		return new EnglishBookingView(header, accountType, bookingDate, returnDate, bookingPerson, footer, car);
 	}
 
 	

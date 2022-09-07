@@ -1,30 +1,35 @@
 package booking.structure;
 
+import java.time.Duration;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 import payment.structure.AccountType;
 import person.structure.Person;
+import resource.structure.ICar;
 
 public class EnglishBookingView {
 	
 	private final Head header;
-	private final int bookingId;
-	private final int bookingAmount;
+	private int bookingId = 0;
+	private final long bookingAmount;
 	private final AccountType accountType;
 	private final Date bookingDate;
 	private final Date returnDate;
 	private final Person bookingPerson;
 	private final Footer footer;
+	private final ICar car;
 	
-	public EnglishBookingView(Head header, int bookingId, int bookingAmount, AccountType accountType, Date bookingDate, Date returnDate,
-			Person bookingPerson, Footer footer) {
+	public EnglishBookingView(Head header, AccountType accountType, Date bookingDate, Date returnDate,
+			Person bookingPerson, Footer footer, ICar car) {
 				this.header = header;
-				this.bookingId = bookingId;
-				this.bookingAmount = bookingAmount;
+				this.bookingId++;
+				this.car = car;
 				this.accountType = accountType;
 				this.bookingDate = bookingDate;
 				this.returnDate = returnDate;
 				this.bookingPerson = bookingPerson;
+				this.bookingAmount = (long) (TimeUnit.DAYS.convert(Math.abs(returnDate.getTime()- bookingDate.getTime()), TimeUnit.MILLISECONDS) * car.giveCosts()) ;
 				this.footer = footer;
 	}
 	
@@ -36,10 +41,15 @@ public class EnglishBookingView {
 		view += "Payment method: " + accountType + "\n";
 		view += "Booking date: " + bookingDate + "\n";
 		view += "Return date: " + returnDate + "\n";
-		view += "Booking Person: " + bookingPerson + "\n";
+		view += "Booking Person: " + bookingPerson.getName() + "\n";
 		view += footer.printFooter();
 		
 		return view;
+	}
+
+	public Integer getBookingId() {
+		// TODO Auto-generated method stub
+		return bookingId;
 	}
 
 }

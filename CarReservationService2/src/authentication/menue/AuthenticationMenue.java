@@ -48,7 +48,7 @@ public class AuthenticationMenue {
 				printAuthenticationDictonary();
 				break;
 			}
-			System.out.println("Wenn sie eine weitere Aktion ausführen wollen geben sie 1 ein:");
+			System.out.println("Wenn sie eine weitere AuthenticationsAktion ausführen wollen geben sie 1 ein, sonst 0:");
 			weiter = Integer.parseInt(scanner.nextLine());
 		}while(weiter == 1);
 	}
