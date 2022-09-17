@@ -20,13 +20,13 @@ class PaymentTest {
 	@Test
 	void test() {
 		PaymentPayPal paymentPayPal = new PaymentPayPal();
-		paymentPayPal.bezahlen();
+		paymentPayPal.bezahlen(3000);
 		
 		PaymentGoogleWallet paymentGoogleWallet = new PaymentGoogleWallet();
-		paymentGoogleWallet.bezahlen();
+		paymentGoogleWallet.bezahlen(3000);
 		
 		PaymentMoneyWallet paymentMoneyWallet = new PaymentMoneyWallet();
-		paymentMoneyWallet.bezahlen();
+		paymentMoneyWallet.bezahlen(3000);
 	}
 
 }

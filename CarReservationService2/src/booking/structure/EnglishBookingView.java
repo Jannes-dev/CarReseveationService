@@ -19,6 +19,7 @@ public class EnglishBookingView {
 	private final Person bookingPerson;
 	private final Footer footer;
 	private final ICar car;
+	private boolean payed = false;
 	
 	public EnglishBookingView(Head header, AccountType accountType, Date bookingDate, Date returnDate,
 			Person bookingPerson, Footer footer, ICar car) {
@@ -50,6 +51,22 @@ public class EnglishBookingView {
 	public Integer getBookingId() {
 		// TODO Auto-generated method stub
 		return bookingId;
+	}
+	
+	public AccountType getAccountType() {
+		return this.accountType;
+	}
+	
+	public long getBookingAmount() {
+		return this.bookingAmount;
+	}
+
+	public boolean isPayed() {
+		return payed;
+	}
+
+	public void setPayed(boolean payed) {
+		this.payed = payed;
 	}
 
 }

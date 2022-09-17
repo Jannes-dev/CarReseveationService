@@ -2,6 +2,7 @@ package payment.structure;
 
 public class Account {
 	private String accountName;
+	private String accountPassword;
 	private AccountType accountType;
 	private int accountAmount = 0;
 	//TODO add person and authettication
@@ -24,5 +25,11 @@ public class Account {
 	}
 	public void setAccountAmount(int accountAmount) {
 		this.accountAmount = accountAmount;
+	}
+	public String getAccountPassword() {
+		return accountPassword;
+	}
+	public void setAccountPassword(String accountPassword) {
+		this.accountPassword = accountPassword;
 	}
 }

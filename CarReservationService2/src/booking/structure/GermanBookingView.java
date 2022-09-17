@@ -17,6 +17,7 @@ public class GermanBookingView {
 	private final Person bookingPerson;
 	private final ICar car;
 	private final Footer footer;
+	private boolean payed = false;
 	
 	public GermanBookingView(Head header, AccountType accountType, Date bookingDate, Date returnDate,
 			Person bookingPerson, Footer footer, ICar car) {
@@ -47,5 +48,21 @@ public class GermanBookingView {
 	
 	public int getBookingId() {
 		return this.bookingId;
+	}
+	
+	public AccountType getAccountType() {
+		return this.accountType;
+	}
+	
+	public long getBookingAmount() {
+		return this.bookingAmount;
+	}
+
+	public boolean isPayed() {
+		return payed;
+	}
+
+	public void setPayed(boolean payed) {
+		this.payed = payed;
 	}
 }
