@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public abstract class Knot {
 	private String name = "";
 	static int ebene = 0;
-	ArrayList<Knot> childElement = new ArrayList<Knot>();
+	public ArrayList<Knot> childElement = new ArrayList<Knot>();
 	
 	public Knot(String name) {
 		this.name = name;

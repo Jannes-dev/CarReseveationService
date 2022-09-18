@@ -15,11 +15,13 @@ public class GermanProductBuilder implements IBuilder {
 	private ICar car;
 	private Footer footer;
 	private AccountType accountType;
+	private int bookingId;
 	
 	@Override
 	public void setHeader(Head head) {
 		this.header = head;
 	}
+	
 
 	@Override
 	public void setBookingDate(Date bookingDate) {

@@ -9,6 +9,7 @@ import booking.englishView.EnglishFooter;
 import booking.englishView.EnglishHeader;
 import booking.germanView.GermanFooter;
 import booking.germanView.GermanHeader;
+import booking.menue.BookingMenue;
 import payment.structure.AccountType;
 import person.menue.Personmenue;
 import resource.menue.ResourceMenue;
@@ -18,9 +19,17 @@ public class Director {
 	private SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH);
 	private Personmenue personMenue = Personmenue.getInstance();
 	private ResourceMenue resourceMenue = ResourceMenue.getInstance();
+	private BookingMenue bookingMenue = BookingMenue.getInstance();
 	
 	public void constructEnglishBookingView(IBuilder builder) {
 		builder.setHeader(new EnglishHeader());
+		
+		System.out.println("Enter bookingId(int)");
+		int bookingId = Integer.parseInt(scanner.nextLine());
+		if(bookingMenue.englishBookingDictonary.containsKey(bookingId)) {
+			System.out.println("Try another booking Id");
+		}
+		
 		
 		System.out.println("Enter your preferred paymentmethod (PAYPAL, GOOGLEWALLET, MONEYWALLET): ");
 		String input = scanner.nextLine();

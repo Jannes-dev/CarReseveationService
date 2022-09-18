@@ -1,5 +1,6 @@
 package content.structure;
 
+import java.util.Date;
 import java.util.Iterator;
 
 public class Folder extends Knot {
@@ -8,6 +9,7 @@ public class Folder extends Knot {
 		super(name);
 		// TODO Auto-generated constructor stub
 	}
+	
 	
 	public void add(Knot knot) {
 		this.childElement.add(knot);

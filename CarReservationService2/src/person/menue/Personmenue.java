@@ -18,7 +18,8 @@ public class Personmenue {
 	public Hashtable<Integer, Person> personDictonary = new Hashtable<Integer, Person>();
 	
 	private Personmenue() {
-		
+		LegalPerson legalPerson = new LegalPerson(0, "Test", "Test", "Test", 0);
+		personDictonary.put(legalPerson.getIdNumber(), legalPerson);
 	}
 	public void menu() {
 		int weiter = 0;

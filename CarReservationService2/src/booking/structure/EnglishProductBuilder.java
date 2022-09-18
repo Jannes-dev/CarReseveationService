@@ -16,6 +16,7 @@ public class EnglishProductBuilder implements IBuilder {
 	private Person bookingPerson;
 	private ICar car;
 	private Footer footer;
+	private int bookingId;
 	
 	
 	@Override
@@ -56,6 +57,8 @@ public class EnglishProductBuilder implements IBuilder {
 	public EnglishBookingView build() {
 		return new EnglishBookingView(header, accountType, bookingDate, returnDate, bookingPerson, footer, car);
 	}
+
+	
 
 	
 

@@ -23,7 +23,8 @@ public class ResourceMenue {
 	public Hashtable<Integer, ICar> resourceDictonary = new Hashtable<Integer, ICar>();
 	
 	private ResourceMenue() {
-		
+		ICar newCar = new Limo();
+		resourceDictonary.put(1, newCar);
 	}
 	
 	public void menu() {

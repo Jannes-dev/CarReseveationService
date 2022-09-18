@@ -9,7 +9,8 @@ import resource.structure.ICar;
 
 public class GermanBookingView {
 	private final Head header;
-	private int bookingId = 0;
+	private static int bookingId = 0;
+	private int actualBookingId;
 	private final long bookingAmount;
 	private final AccountType accountType;
 	private final Date bookingDate;
@@ -22,7 +23,8 @@ public class GermanBookingView {
 	public GermanBookingView(Head header, AccountType accountType, Date bookingDate, Date returnDate,
 			Person bookingPerson, Footer footer, ICar car) {
 				this.header = header;
-				bookingId++;
+				GermanBookingView.bookingId++;
+				setActualBookingId(bookingId);
 				this.car = car;
 				this.accountType = accountType;
 				this.bookingDate = bookingDate;
@@ -35,7 +37,7 @@ public class GermanBookingView {
 	public String printView() {
 		String view = "";
 		view += header.printHeader();
-		view += "Buchungsnummer: " + bookingId + "\n";
+//		view += "Buchungsnummer: " + bookingId + "\n";
 		view += "Preis: " + bookingAmount + "\n";
 		view += "Bezahlmethode: " + accountType + "\n";
 		view += "Buchungsdatum: " + bookingDate + "\n";
@@ -47,7 +49,7 @@ public class GermanBookingView {
 	}
 	
 	public int getBookingId() {
-		return this.bookingId;
+		return this.actualBookingId;
 	}
 	
 	public AccountType getAccountType() {
@@ -64,5 +66,18 @@ public class GermanBookingView {
 
 	public void setPayed(boolean payed) {
 		this.payed = payed;
+	}
+
+	public Date getBookingDate() {
+		// TODO Auto-generated method stub
+		return bookingDate;
+	}
+
+	private void setActualBookingId(int actualBookingId) {
+		this.actualBookingId = actualBookingId;
+	}
+	
+	public boolean getPaymentStatus() {
+		return payed;
 	}
 }
