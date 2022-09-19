@@ -19,33 +19,7 @@ public abstract class Payment {
 	}
 	
 
-	private Account clientAuthentification() {
-		//TODO Account mit person verknüpfen und clientAuthentification mit dem account der bei person liegt abgleichen
-		//TODO sender Account anschließend zurückgeben
-		Scanner scanner = new Scanner(System.in);
-		boolean authenticationStatus = false;
-		Account senderAccount = null;
-		
-		do {
-			System.out.println("Enter username from your Paymentaccount:");
-			String inputUsername = scanner.nextLine();
-			System.out.println("Enter password:");
-			String inputPassword = scanner.nextLine();
-		if(accounts.accountDictonary.containsKey(inputUsername) && accounts.accountDictonary.get(inputUsername).getAccountPassword().equals(inputPassword) ) {
-			//TODO statt "allemeinepferdchen@web.de" muss da userNamePassword.getUsername hin
-			senderAccount = accounts.accountDictonary.get(inputUsername);
-		}
-		else {
-			System.out.println("Authentication unsuccessful!");
-			System.out.println("Pls try again");
-			authenticationStatus = true;
-			
-		}
-		}
-		while(authenticationStatus);
-		
-		return senderAccount;
-	}
+	abstract Account clientAuthentification();
 	
 	//TODO überprüfen welcher accounttype vorliegt muss der gleicche sein
 	protected abstract void bookAmount(Account senderAccount, long amountToPay);

@@ -100,7 +100,7 @@ public class BookingMenue {
 	
 	private void createTestBookings() {
 		try {
-			GermanBookingView germanTestBookingView = new GermanBookingView(new GermanHeader(), AccountType.PAYPAL,
+			GermanBookingView germanTestBookingView = new GermanBookingView(new GermanHeader(), AccountType.GOOGLEWALLET,
 					formatter.parse("11/10/2022"), formatter.parse("11/11/2022"),
 					new LegalPerson(0, "Test", "Test", "Test", 0),
 					new GermanFooter(), 

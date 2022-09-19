@@ -8,13 +8,20 @@ import authentication.structure.EyeScanStrategy;
 import authentication.structure.FingerPrintStrategy;
 import authentication.structure.Subject;
 import authentication.structure.UserNamePasswordStrategy;
+import booking.menue.BookingMenue;
 
 public class AuthenticationMenue {
 	
+	private static final AuthenticationMenue authenticationMenue = new AuthenticationMenue();
 	private int choice;
 	private Scanner scanner = new Scanner(System.in);
 	
 	public Hashtable<String, Subject> authenticationDictonary = new Hashtable<String, Subject>();
+	private boolean loginSuccessful = false;
+	
+	private AuthenticationMenue() {
+		
+	}
 	
 	public void menu() {
 		int weiter = 0;
@@ -97,4 +104,33 @@ public class AuthenticationMenue {
 		else
 			System.out.println("Keine Authentifizierung Vorhanden!");
 }
+	
+	public static AuthenticationMenue getInstance() {
+		return authenticationMenue;
+	}
+	
+	public void performAuthentification() {
+		System.out.println("Um eine Buchung vorzunehmen loggen sie sich bitte ein");
+		System.out.println("Nutzername:");
+		String username = scanner.nextLine();
+		if (!authenticationMenue.authenticationDictonary.isEmpty() ) {
+			if(authenticationMenue.authenticationDictonary.containsKey(username)) {
+				
+				authenticationDictonary.get(username).printConformatin();
+				loginSuccessful = true;
+			}
+			else {
+				System.out.println("FalschernutzerName");
+			}
+			}
+		 else {
+			System.out.println("Es sind keine Accounts vorhanden");
+			menu();
+		}
+
+	}
+
+	public boolean isLoginSuccessful() {
+		return loginSuccessful;
+	}
 }

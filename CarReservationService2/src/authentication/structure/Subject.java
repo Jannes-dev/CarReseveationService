@@ -21,5 +21,9 @@ public class Subject {
 	public String getUsername() {
 		return username;
 	}
+	
+	public String getPassword() {
+		return ((UserNamePasswordStrategy) strategy).getPassword();
+	}
 
 }

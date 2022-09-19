@@ -4,7 +4,7 @@ public class Account {
 	private String accountName;
 	private String accountPassword;
 	private AccountType accountType;
-	private int accountAmount = 0;
+	private long accountAmount = 0;
 	//TODO add person and authettication
 	
 	
@@ -20,11 +20,11 @@ public class Account {
 	public void setAccountType(AccountType accountType) {
 		this.accountType = accountType;
 	}
-	public int getAccountAmount() {
+	public long getAccountAmount() {
 		return accountAmount;
 	}
-	public void setAccountAmount(int accountAmount) {
-		this.accountAmount = accountAmount;
+	public void setAccountAmount(long temporaryAmount) {
+		this.accountAmount = temporaryAmount;
 	}
 	public String getAccountPassword() {
 		return accountPassword;

@@ -7,8 +7,9 @@ import java.util.concurrent.TimeUnit;
 import payment.structure.AccountType;
 import person.structure.Person;
 import resource.structure.ICar;
+import statistics.structure.StatisitcBesucher;
 
-public class EnglishBookingView {
+public class EnglishBookingView extends BookingView {
 	
 	private final Head header;
 	private static int bookingId = 0;
@@ -79,6 +80,12 @@ public class EnglishBookingView {
 	public boolean getPaymentStatus() {
 		// TODO Auto-generated method stub
 		return payed;
+	}
+
+	@Override
+	public void akzeptieren(StatisitcBesucher statisticBesucher) {
+		statisticBesucher.besuchen(this);
+		
 	}
 
 }
