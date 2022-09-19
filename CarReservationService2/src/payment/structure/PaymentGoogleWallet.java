@@ -51,6 +51,7 @@ public class PaymentGoogleWallet extends Payment {
 				// TODO statt "allemeinepferdchen@web.de" muss da userNamePassword.getUsername
 				// hin
 				senderAccount = accounts.accountDictonary.get(inputUsername);
+				authenticationStatus = false;
 			} else {
 				System.out.println("Authentication unsuccessful!");
 				System.out.println("Pls try again");

@@ -19,76 +19,92 @@ public class ResourceMenue {
 	private int choice;
 	private Scanner scanner = new Scanner(System.in);
 	private static final ResourceMenue resourceMenue = new ResourceMenue();
-	
+
 	public Hashtable<Integer, ICar> resourceDictonary = new Hashtable<Integer, ICar>();
-	
+
 	private ResourceMenue() {
 		ICar newCar = new Limo();
 		resourceDictonary.put(1, newCar);
 	}
-	
+
 	public void menu() {
 		int weiter = 0;
 		ICar newCar;
-		
+		boolean idExists = true;
 		do {
 			int carId;
-			
+
 			System.out.println("Was möchten sie tun?\n");
 			System.out.println("Um eine Limo zu erstellen geben sie eine 1 ein");
 			System.out.println("Um einen FamilyVan zu erstellen geben sie eine 2 ein");
 			System.out.println("Um ein Auto zu entfernen geben sie eine 3 ein");
 			System.out.println("Um die Autos angezeigt zu bekommen drücken sie die 4");
 			choice = scanner.nextInt();
-			
-			switch(choice) {
+
+			switch (choice) {
 			case 1:
-				System.out.println("geben sie die Resourcen Id ein:");
-				carId = scanner.nextInt();
-				
-				newCar = new Limo();
-				newCar = addEquipment(newCar);
-				
-				resourceDictonary.put(carId, newCar);
+				while (idExists) {
+					System.out.println("geben sie die Resourcen Id ein:");
+					carId = scanner.nextInt();
+					if (resourceDictonary.containsKey(carId)) {
+						newCar = new Limo();
+						newCar = addEquipment(newCar);
+
+						resourceDictonary.put(carId, newCar);
+						idExists = false;
+					} else {
+						System.out.println("CarId exestiert bereits geben sie bitte eine neue ein");
+						idExists = true;
+					}
+				}
+
 				break;
 			case 2:
 				System.out.println("geben sie die Resourcen Id ein:");
 				carId = scanner.nextInt();
-				
-				newCar = new FamilyVan();
-				newCar = addEquipment(newCar);
-				
-				resourceDictonary.put(carId, newCar);
+				while (idExists) {
+					if (resourceDictonary.containsKey(carId)) {
+						newCar = new FamilyVan();
+						newCar = addEquipment(newCar);
+
+						resourceDictonary.put(carId, newCar);
+						idExists = false;
+					} else {
+						System.out.println("CarId exestiert bereits geben sie bitte eine neue ein");
+						idExists = true;
+					}
+				}
+
 				break;
 			case 3:
 				System.out.println("Um ein Auto zu löschen geben sie bitte die Id des Autos ein: ");
 				int temporaryIdNumber = scanner.nextInt();
-				if(resourceDictonary.containsKey(temporaryIdNumber)) {
+				if (resourceDictonary.containsKey(temporaryIdNumber)) {
 					resourceDictonary.remove(temporaryIdNumber);
-				}
-				else
+				} else
 					System.out.println("Resource ist unter dieser Nummer nicht vorhanden!");
-					break;
+				break;
 			case 4:
 				printPersonDictonary();
 				break;
 			}
 			System.out.println("Wenn sie eine weitere ResourcenAktion ausführen wollen geben sie 1 ein, sonst 0:");
 			weiter = scanner.nextInt();
-		}while(weiter == 1);
+		} while (weiter == 1);
 	}
 
 	private ICar addEquipment(ICar newCar) {
-		int weiter = 0 ;
+		int weiter = 0;
 		do {
 			System.out.println("um einen Kindersitz hinzuzufügen geben sie die 1 ein");
 			System.out.println("um eine SetTopBox hinzuzufügen geben sie die 2 ein");
 			System.out.println("wenn sie kein Equioment möchten geben sie eine 3 ein\n");
 			choice = scanner.nextInt();
-			switch(choice) {
+			switch (choice) {
 			case 1:
 				newCar = new ChildSeat(newCar);
-				//TODO eventuell hier hin moven --> "Wenn sie weiters Equipment hinzufügen möchten geben sie bit..."
+				// TODO eventuell hier hin moven --> "Wenn sie weiters Equipment hinzufügen
+				// möchten geben sie bit..."
 				break;
 			case 2:
 				newCar = new SetTopBox(newCar);
@@ -98,28 +114,27 @@ public class ResourceMenue {
 			}
 			System.out.println("Wenn sie weiters Equipment hinzufügen möchten geben sie bitte eine 1 ein");
 			weiter = scanner.nextInt();
-			
-		}while(weiter == 1);
+
+		} while (weiter == 1);
 		return newCar;
 	}
 
 	private void printPersonDictonary() {
-		if(!resourceDictonary.isEmpty()) {
+		if (!resourceDictonary.isEmpty()) {
 			Set<Integer> keys = resourceDictonary.keySet();
-			for(int key : keys) {
+			for (int key : keys) {
 				ICar printCar = resourceDictonary.get(key);
-				
+
 				System.out.println("_____________________________________");
 				System.out.println("ResourcenId =\t" + key);
-				System.out.println(printCar.showDetails()); 
-				System.out.println("Price pro Tag in €:\t" + printCar.giveCosts()); 
+				System.out.println(printCar.showDetails());
+				System.out.println("Price pro Tag in €:\t" + printCar.giveCosts());
 
 			}
-		}
-		else
+		} else
 			System.out.println("Keine Resourcen Vorhanden!");
 	}
-	
+
 	public static ResourceMenue getInstance() {
 		return resourceMenue;
 	}

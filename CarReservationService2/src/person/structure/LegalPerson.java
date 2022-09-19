@@ -2,15 +2,17 @@ package person.structure;
 
 public class LegalPerson extends Person{
 	
-	private int idNumber;
+	private static int idNumber;
+	private int actualIdNumber;
 	private String l;
 	private String city;
 	private String address;
 	private int zipCode;
 	private String companyName;
 	
-	public LegalPerson(int idNumber, String companyName, String city, String address, int zipCode) {
-		this.idNumber = idNumber;
+	public LegalPerson(String companyName, String city, String address, int zipCode) {
+		LegalPerson.idNumber++;
+		this.actualIdNumber = idNumber;
 		this.l = "l";
 		this.city = city;
 		this.address = address;
@@ -36,7 +38,7 @@ public class LegalPerson extends Person{
 	@Override
 	public Integer getIdNumber() {
 		// TODO Auto-generated method stub
-		return this.idNumber;
+		return this.actualIdNumber;
 	}
 	@Override
 	public String getUnterklasse() {

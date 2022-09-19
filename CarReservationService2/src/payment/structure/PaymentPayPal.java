@@ -52,6 +52,7 @@ public class PaymentPayPal extends Payment{
 				if(accounts.accountDictonary.containsKey(inputUsername) && accounts.accountDictonary.get(inputUsername).getAccountPassword().equals(inputPassword) ) {
 					//TODO statt "allemeinepferdchen@web.de" muss da userNamePassword.getUsername hin
 					senderAccount = accounts.accountDictonary.get(inputUsername);
+					authenticationStatus = false;
 				}
 				else {
 					System.out.println("Authentication unsuccessful!");

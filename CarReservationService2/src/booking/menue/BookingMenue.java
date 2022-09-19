@@ -102,49 +102,49 @@ public class BookingMenue {
 		try {
 			GermanBookingView germanTestBookingView = new GermanBookingView(new GermanHeader(), AccountType.GOOGLEWALLET,
 					formatter.parse("11/10/2022"), formatter.parse("11/11/2022"),
-					new LegalPerson(0, "Test", "Test", "Test", 0),
+					new LegalPerson( "Test", "Test", "Test", 0),
 					new GermanFooter(), 
 					new Limo());
 			germanBookingDictonary.put(germanTestBookingView.getBookingId(), germanTestBookingView);
 			
 			GermanBookingView germanTestBookingView3 = new GermanBookingView(new GermanHeader(), AccountType.PAYPAL,
 					formatter.parse("11/11/2022"), formatter.parse("11/12/2022"),
-					new LegalPerson(0, "Test", "Test", "Test", 0),
+					new LegalPerson( "Test", "Test", "Test", 0),
 					new GermanFooter(), 
 					new Limo());
 			germanBookingDictonary.put(germanTestBookingView3.getBookingId(), germanTestBookingView3);
 			
 			GermanBookingView germanTestBookingView2 = new GermanBookingView(new GermanHeader(), AccountType.PAYPAL,
 					formatter.parse("11/10/2021"), formatter.parse("11/11/2021"),
-					new LegalPerson(0, "Test", "Test", "Test", 0),
+					new LegalPerson( "Test", "Test", "Test", 0),
 					new GermanFooter(), 
 					new Limo());
 			germanBookingDictonary.put(germanTestBookingView2.getBookingId(), germanTestBookingView2);
 			
 			GermanBookingView germanTestBookingView4 = new GermanBookingView(new GermanHeader(), AccountType.PAYPAL,
 					formatter.parse("11/11/2021"), formatter.parse("11/11/2021"),
-					new LegalPerson(0, "Test", "Test", "Test", 0),
+					new LegalPerson( "Test", "Test", "Test", 0),
 					new GermanFooter(), 
 					new Limo());
 			germanBookingDictonary.put(germanTestBookingView4.getBookingId(), germanTestBookingView4);
 			
 			GermanBookingView germanTestBookingView6 = new GermanBookingView(new GermanHeader(), AccountType.PAYPAL,
 					formatter.parse("11/11/2021"), formatter.parse("11/11/2021"),
-					new LegalPerson(0, "Test", "Test", "Test", 0),
+					new LegalPerson( "Test", "Test", "Test", 0),
 					new GermanFooter(), 
 					new Limo());
 			germanBookingDictonary.put(germanTestBookingView6.getBookingId(), germanTestBookingView6);
 			
 			EnglishBookingView englishTestBookingView = new EnglishBookingView(new EnglishHeader(), AccountType.PAYPAL,
 					formatter.parse("11/10/2022"), formatter.parse("11/11/2022"),
-					new LegalPerson(0, "Test", "Test", "Test", 0),
+					new LegalPerson( "Test", "Test", "Test", 0),
 					new EnglishFooter(), 
 					new Limo());
 			englishBookingDictonary.put(englishTestBookingView.getBookingId(), englishTestBookingView);
 			
 			EnglishBookingView englishTestBookingView2 = new EnglishBookingView(new EnglishHeader(), AccountType.PAYPAL,
 					formatter.parse("11/10/2021"), formatter.parse("11/11/2021"),
-					new LegalPerson(0, "Test", "Test", "Test", 0),
+					new LegalPerson( "Test", "Test", "Test", 0),
 					new EnglishFooter(), 
 					new Limo());
 			englishBookingDictonary.put(englishTestBookingView2.getBookingId(), englishTestBookingView2);

@@ -2,7 +2,8 @@ package person.structure;
 
 public class NaturalPerson extends Person {
 	
-	private int idNumber;
+	private static int idNumber;
+	private int acutalIdNumber;
 	private String n;
 	private String gender;
 	private String city;
@@ -13,8 +14,9 @@ public class NaturalPerson extends Person {
 	private String firstName;
 	private String lastName;
 	
-	public NaturalPerson(int idNumber, String firstName, String lastName, String gender, int age, String driverLicense, String city, String address, int zipCode) {
-		this.idNumber = idNumber;
+	public NaturalPerson(String firstName, String lastName, String gender, int age, String driverLicense, String city, String address, int zipCode) {
+		NaturalPerson.idNumber++;
+		this.acutalIdNumber = idNumber;
 		this.n = "n";
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -50,7 +52,7 @@ public class NaturalPerson extends Person {
 	@Override
 	public Integer getIdNumber() {
 		// TODO Auto-generated method stub
-		return this.idNumber;
+		return this.acutalIdNumber;
 	}
 
 	@Override
