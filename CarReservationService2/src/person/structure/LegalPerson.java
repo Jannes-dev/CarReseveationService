@@ -11,7 +11,7 @@ public class LegalPerson extends Person{
 	private String companyName;
 	
 	public LegalPerson(String companyName, String city, String address, int zipCode) {
-		idNumber = (idNumber *2) -1;
+		idNumber = (idNumber *2) - 1;
 		this.actualIdNumber = idNumber;
 		this.l = "l";
 		this.city = city;

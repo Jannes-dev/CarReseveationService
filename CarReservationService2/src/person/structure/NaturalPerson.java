@@ -2,7 +2,7 @@ package person.structure;
 
 public class NaturalPerson extends Person {
 	
-	private static int idNumber;
+	private static int idNumber = 1;
 	private int acutalIdNumber;
 	private String n;
 	private String gender;
