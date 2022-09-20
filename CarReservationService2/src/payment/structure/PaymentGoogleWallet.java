@@ -39,7 +39,7 @@ public class PaymentGoogleWallet extends Payment {
 		// TODO sender Account anschließend zurückgeben
 		boolean authenticationStatus = false;
 		Account senderAccount = null;
-
+		System.out.println("Accountinformationen sind in der Klasse 'AccountCreation' vorhanden");
 		do {
 
 			System.out.println("Enter Iban from your Paymentaccount:");

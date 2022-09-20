@@ -40,9 +40,9 @@ public class StatisticMenue {
 			System.out.println("für deutsche Buchungen via PayPal geben sie eine 1 ein");
 			System.out.println("für deutsche Buchungen via GoogleWallet geben sie eine 2 ein");
 			System.out.println("für deutsche Buchungen via MoneyWallet geben sie eine 3 ein");
-			System.out.println("to english bookings with PayPal pls enter a 4");
-			System.out.println("to english bookings with GoogleWallet pls enter a 5");
-			System.out.println("to english bookings with MoneyWallet pls enter a 6");
+			System.out.println("for english bookings with PayPal pls enter a 4");
+			System.out.println("for english bookings with GoogleWallet pls enter a 5");
+			System.out.println("for english bookings with MoneyWallet pls enter a 6");
 			int choice = Integer.parseInt(scanner.nextLine());
 			
 			switch (choice) {
@@ -73,7 +73,7 @@ public class StatisticMenue {
 
 	private void printEnglishStatistic(ArrayList<EnglishBookingView> englishBookings) {
 		System.out.println("**************************************");
-		System.out.println("Bezahlt via PayPal" + englishBookings.size());
+		System.out.println(englishBookings.size() + "bookings payed");
 		for(EnglishBookingView englishBookingView : englishBookings) {
 			String ausgabe = "";
 			ausgabe += englishBookingView.getBookingId() + "\t";
@@ -85,7 +85,7 @@ public class StatisticMenue {
 
 	private void printGermanStatistic(ArrayList<GermanBookingView> germanBookings) {
 		System.out.println("**************************************");
-		System.out.println("Bezahlt via PayPal" + germanBookings.size());
+		System.out.println(germanBookings.size() + "Buchungen bezahlt");
 		for(GermanBookingView germanBookingView : germanBookings) {
 			String ausgabe = "";
 			ausgabe += germanBookingView.getBookingId() + "\t";

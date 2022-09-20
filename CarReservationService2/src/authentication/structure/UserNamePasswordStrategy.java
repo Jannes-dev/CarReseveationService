@@ -10,7 +10,7 @@ public class UserNamePasswordStrategy implements ICredential {
 	public UserNamePasswordStrategy(String username) {
 		Scanner scanner = new Scanner(System.in);
 		this.username = username;
-		System.out.println("Enter password:");
+		System.out.println("Geben Sie ihr gewünschtes Passwort ein:");
 		this.password = scanner.nextLine();
 	}
 	
@@ -18,9 +18,9 @@ public class UserNamePasswordStrategy implements ICredential {
 	public boolean authetication() {
 		Scanner scanner = new Scanner(System.in);
 		
-		System.out.println("Enter username:");
+		System.out.println("Nutzername:");
 		String inputUsername = scanner.nextLine();
-		System.out.println("Enter password:");
+		System.out.println("Passwort:");
 		String inputPassword = scanner.nextLine();
 		//TODO mit namen und password des eines accounts einer Person abgleichen
 //		überprüfung ob password and username übereinstimmen

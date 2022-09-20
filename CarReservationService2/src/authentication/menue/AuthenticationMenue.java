@@ -120,7 +120,7 @@ public class AuthenticationMenue {
 				loginSuccessful = true;
 			}
 			else {
-				System.out.println("FalschernutzerName");
+				System.out.println("Falscher Nutzername");
 			}
 			}
 		 else {

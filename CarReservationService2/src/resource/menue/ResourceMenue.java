@@ -30,7 +30,6 @@ public class ResourceMenue {
 	public void menu() {
 		int weiter = 0;
 		ICar newCar;
-		boolean idExists = true;
 		do {
 			int carId;
 
@@ -43,10 +42,11 @@ public class ResourceMenue {
 
 			switch (choice) {
 			case 1:
+				boolean idExists = true;
 				while (idExists) {
 					System.out.println("geben sie die Resourcen Id ein:");
 					carId = scanner.nextInt();
-					if (resourceDictonary.containsKey(carId)) {
+					if (!resourceDictonary.containsKey(carId)) {
 						newCar = new Limo();
 						newCar = addEquipment(newCar);
 
@@ -60,18 +60,19 @@ public class ResourceMenue {
 
 				break;
 			case 2:
-				System.out.println("geben sie die Resourcen Id ein:");
-				carId = scanner.nextInt();
-				while (idExists) {
-					if (resourceDictonary.containsKey(carId)) {
+				boolean idExists2 = true;
+				while (idExists2) {
+					System.out.println("geben sie die Resourcen Id ein:");
+					carId = scanner.nextInt();
+					if (!resourceDictonary.containsKey(carId)) {
 						newCar = new FamilyVan();
 						newCar = addEquipment(newCar);
 
 						resourceDictonary.put(carId, newCar);
-						idExists = false;
+						idExists2 = false;
 					} else {
 						System.out.println("CarId exestiert bereits geben sie bitte eine neue ein");
-						idExists = true;
+						idExists2 = true;
 					}
 				}
 
@@ -98,7 +99,7 @@ public class ResourceMenue {
 		do {
 			System.out.println("um einen Kindersitz hinzuzufügen geben sie die 1 ein");
 			System.out.println("um eine SetTopBox hinzuzufügen geben sie die 2 ein");
-			System.out.println("wenn sie kein Equioment möchten geben sie eine 3 ein\n");
+			System.out.println("wenn sie kein Equioment möchten geben sie eine 3 ein");
 			choice = scanner.nextInt();
 			switch (choice) {
 			case 1:

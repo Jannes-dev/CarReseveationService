@@ -5,7 +5,7 @@ public class Limo implements ICar {
 	@Override
 	public float giveCosts() {
 		// TODO Auto-generated method stub
-		return 500000;
+		return 50;
 	}
 
 	@Override

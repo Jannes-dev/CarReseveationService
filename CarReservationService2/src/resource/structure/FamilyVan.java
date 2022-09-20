@@ -4,7 +4,7 @@ public class FamilyVan implements ICar {
 
 	@Override
 	public float giveCosts() {
-		return 2000;
+		return 200;
 	}
 
 	@Override

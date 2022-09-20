@@ -9,7 +9,7 @@ public class ChildSeat extends Equipment {
 	@Override
 	public float giveCosts() {
 		// TODO Auto-generated method stub
-		return car.giveCosts() + 150;
+		return car.giveCosts() + 25;
 	}
 
 	@Override

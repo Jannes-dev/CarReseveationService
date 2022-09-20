@@ -8,7 +8,7 @@ public class SetTopBox extends Equipment{
 	
 	@Override
 	public float giveCosts() {
-		return car.giveCosts() + 500;
+		return car.giveCosts() + 100;
 	}
 
 	@Override
