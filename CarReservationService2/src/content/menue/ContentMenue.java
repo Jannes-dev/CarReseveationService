@@ -114,7 +114,7 @@ public class ContentMenue {
 	}
 	
 	private File createNewGermanFile(Integer key) {
-		File newFile = new File("BookingID " + bookingMenue.germanBookingDictonary.get(key).getBookingId(),
+		File newFile = new File("Auftragsnummer " + bookingMenue.germanBookingDictonary.get(key).getBookingId(),
 				bookingMenue.germanBookingDictonary.get(key));
 		return newFile;
 	}

@@ -25,8 +25,7 @@ public class File extends Knot {
 
 	private String printGermanFileView() {
 		String fileView = "";
-		fileView += "\tAuftragsnummer" + germanBookingView.getBookingId() + "\n";
-		fileView += "\tBetrag" + germanBookingView.getBookingAmount() + "\n";
+		fileView += "\tBetrag = " + germanBookingView.getBookingAmount() + "\n";
 		fileView += "\tBezahlStatus = " + germanBookingView.getPaymentStatus()+ "\n";
 		return fileView;
 	}
@@ -39,9 +38,7 @@ public class File extends Knot {
 		formatString = "%" + (ebene * 2) + "s";
 		// Ausgabe der Leerzeichen
 		System.out.printf(formatString, "");
-		System.out.println("\t___________________________________________");
 		// Ausgabe eines Minuszeichens gefolgt vom Namen des Knotens
-		System.out.printf(formatString, "");
 		System.out.println(" - " + super.gibName());
 		System.out.printf(formatString, "");
 		if (germanBookingView != null) {
@@ -55,8 +52,7 @@ public class File extends Knot {
 
 	private String printEnglishView() {
 		String fileView = "";
-		fileView += "\tBookingid" + englishBookingView.getBookingId() + "\n";
-		fileView += "\tAmount" + englishBookingView.getBookingAmount() + "\n";
+		fileView += "\tAmount = " + englishBookingView.getBookingAmount() + "\n";
 		fileView += "\tPaymentstatus = " + englishBookingView.getPaymentStatus()+ "\n";
 		return fileView;
 	}
