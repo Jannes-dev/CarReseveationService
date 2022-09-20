@@ -122,7 +122,7 @@ public class BookingMenue {
 			germanBookingDictonary.put(germanTestBookingView2.getBookingId(), germanTestBookingView2);
 			
 			GermanBookingView germanTestBookingView4 = new GermanBookingView(new GermanHeader(), AccountType.PAYPAL,
-					formatter.parse("11/11/2021"), formatter.parse("11/11/2021"),
+					formatter.parse("11/06/2023"), formatter.parse("11/07/2023"),
 					new LegalPerson( "Test", "Test", "Test", 0),
 					new GermanFooter(), 
 					new Limo());
@@ -135,8 +135,22 @@ public class BookingMenue {
 					new Limo());
 			germanBookingDictonary.put(germanTestBookingView6.getBookingId(), germanTestBookingView6);
 			
-			EnglishBookingView englishTestBookingView = new EnglishBookingView(new EnglishHeader(), AccountType.PAYPAL,
+			GermanBookingView germanTestBookingView7 = new GermanBookingView(new GermanHeader(), AccountType.GOOGLEWALLET,
 					formatter.parse("11/10/2022"), formatter.parse("11/11/2022"),
+					new LegalPerson( "Test", "Test", "Test", 0),
+					new GermanFooter(), 
+					new Limo());
+			germanBookingDictonary.put(germanTestBookingView7.getBookingId(), germanTestBookingView7);
+			
+			GermanBookingView germanTestBookingView8 = new GermanBookingView(new GermanHeader(), AccountType.GOOGLEWALLET,
+					formatter.parse("11/12/2022"), formatter.parse("01/01/2023"),
+					new LegalPerson( "Test", "Test", "Test", 0),
+					new GermanFooter(), 
+					new Limo());
+			germanBookingDictonary.put(germanTestBookingView8.getBookingId(), germanTestBookingView8);
+			
+			EnglishBookingView englishTestBookingView = new EnglishBookingView(new EnglishHeader(), AccountType.PAYPAL,
+					formatter.parse("11/10/2023"), formatter.parse("11/11/2023"),
 					new LegalPerson( "Test", "Test", "Test", 0),
 					new EnglishFooter(), 
 					new Limo());
