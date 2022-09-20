@@ -42,7 +42,7 @@ public class PaymentPayPal extends Payment{
 				Scanner scanner = new Scanner(System.in);
 				boolean authenticationStatus = false;
 				Account senderAccount = null;
-				
+				System.out.println("Accountinformationen sind in der Klasse 'AccountCreation' vorhanden");
 				do {
 					
 					System.out.println("Enter email from your Paymentaccount:");

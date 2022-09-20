@@ -17,7 +17,10 @@ public class ContentMenue {
 	private SimpleDateFormat formatterYear = new SimpleDateFormat("yyyy", Locale.ENGLISH);
 	private SimpleDateFormat formatterMonth = new SimpleDateFormat("MM", Locale.ENGLISH);
 	private BookingMenue bookingMenue = BookingMenue.getInstance();
-
+	private String year;
+	private String month;
+	private long amountPayed;
+	private long amountBooked;
 	private ContentMenue() {
 
 	}
@@ -42,10 +45,10 @@ public class ContentMenue {
 			Set<Integer> keys = bookingMenue.germanBookingDictonary.keySet();
 			for (Integer key : keys) {
 
-				String year = formatterYear.format(bookingMenue.germanBookingDictonary.get(key).getBookingDate());
+				year = formatterYear.format(bookingMenue.germanBookingDictonary.get(key).getBookingDate());
 				folderYear = new Folder(year);
 
-				String month = formatterMonth.format(bookingMenue.germanBookingDictonary.get(key).getBookingDate());
+				month = formatterMonth.format(bookingMenue.germanBookingDictonary.get(key).getBookingDate());
 				folderMonth = new Folder(month);
 
 				// Check ob ornder mit jahr schon existiert
@@ -78,10 +81,10 @@ public class ContentMenue {
 			Set<Integer> keys = bookingMenue.englishBookingDictonary.keySet();
 			for (Integer key : keys) {
 
-				String year = formatterYear.format(bookingMenue.englishBookingDictonary.get(key).getBookingDate());
+				year = formatterYear.format(bookingMenue.englishBookingDictonary.get(key).getBookingDate());
 				folderYear = new Folder(year);
 
-				String month = formatterMonth.format(bookingMenue.englishBookingDictonary.get(key).getBookingDate());
+				month = formatterMonth.format(bookingMenue.englishBookingDictonary.get(key).getBookingDate());
 				folderMonth = new Folder(month);
 
 				// Check ob ornder mit jahr schon existiert
@@ -124,7 +127,12 @@ public class ContentMenue {
 				bookingMenue.englishBookingDictonary.get(key));
 		return newFile;
 	}
-
+	
+	private File createStatisticFile(String partFileName) {
+		File newFile = new File(partFileName + "Stats", amountPayed, amountBooked);
+		return newFile;
+	}
+	
 	public Knot getFolderWithNameIfExists(String nameToSearchFor, Folder knot) {
 		Knot exists = null;
 		for (Knot folder : knot.childElement) {

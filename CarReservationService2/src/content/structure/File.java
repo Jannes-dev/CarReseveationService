@@ -23,6 +23,11 @@ public class File extends Knot {
 		this.englishBookingView = englishBookingView;
 	}
 
+	public File(String name, long amountPayed, long amountBooked) {
+		super(name);
+		
+	}
+
 	private String printGermanFileView() {
 		String fileView = "";
 		fileView += "\tBetrag = " + germanBookingView.getBookingAmount() + "\n";
