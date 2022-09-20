@@ -15,7 +15,7 @@ public class NaturalPerson extends Person {
 	private String lastName;
 	
 	public NaturalPerson(String firstName, String lastName, String gender, int age, String driverLicense, String city, String address, int zipCode) {
-		NaturalPerson.idNumber++;
+		idNumber = idNumber * 2;
 		this.acutalIdNumber = idNumber;
 		this.n = "n";
 		this.firstName = firstName;

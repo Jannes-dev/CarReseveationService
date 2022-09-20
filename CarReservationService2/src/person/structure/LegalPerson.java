@@ -2,7 +2,7 @@ package person.structure;
 
 public class LegalPerson extends Person{
 	
-	private static int idNumber;
+	private static int idNumber = 1;
 	private int actualIdNumber;
 	private String l;
 	private String city;
@@ -11,7 +11,7 @@ public class LegalPerson extends Person{
 	private String companyName;
 	
 	public LegalPerson(String companyName, String city, String address, int zipCode) {
-		LegalPerson.idNumber++;
+		idNumber = (idNumber *2) -1;
 		this.actualIdNumber = idNumber;
 		this.l = "l";
 		this.city = city;
