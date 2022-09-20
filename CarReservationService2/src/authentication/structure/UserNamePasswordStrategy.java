@@ -18,13 +18,13 @@ public class UserNamePasswordStrategy implements ICredential {
 	public boolean authetication() {
 		Scanner scanner = new Scanner(System.in);
 		
-		System.out.println("Nutzername:");
-		String inputUsername = scanner.nextLine();
+//		System.out.println("Nutzername:");
+//		String inputUsername = scanner.nextLine();
 		System.out.println("Passwort:");
 		String inputPassword = scanner.nextLine();
 		//TODO mit namen und password des eines accounts einer Person abgleichen
 //		überprüfung ob password and username übereinstimmen
-		return username.equals(inputUsername) & password.equals(inputPassword);
+		return password.equals(inputPassword);
 	}
 
 	@Override
